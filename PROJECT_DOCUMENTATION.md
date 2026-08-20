@@ -15,7 +15,7 @@ We will design an alarm system that will detect when a stove top has been left o
 - **How to turn off** The alarm will not turn off once sounded unless the user clicks a button
 
 ### Functional Requirements
- - **Automatic Alarm** When the temperature of a gas stove top reaches a  stable temperature, a sensor will trigger a timer to go for 3 minutes
+ - **Automatic Alarm** When the temperature of a gas stove top exceeding 100 degrees, a sensor will trigger a timer to go for 3 minutes
  - **Timer**: when clicked, the program must start a timer that lasts 5 minutes
  - **Stack Button** when clicked multiple times, program stacks the 5 mins
  - **LED brightness Timer** LED must light up when button clicked then increase in brightness over the 5 minutes
@@ -33,3 +33,69 @@ We will design an alarm system that will detect when a stove top has been left o
 - The heat sensors should consistently detect heat input once per second
 - buttons should always turn off timer and stack alarm time
 - LED should always go from dim to bright depending the deuration the timer is on for.
+
+### Psudocode:
+
+MAIN:
+
+IMPORT time
+BEGIN 
+
+	While true : 
+		Read temp()
+		IF temp() > 100 degrees:
+			Run Automatic_Alarm
+		ELSE 
+			IF button() pressed = 0 then
+IF button pressed > 1
+Run 7 min alarm
+Run LED_Brightness()
+ELSE
+Run Stack
+Run LED_Brightness()
+ENDIF
+		ENDIF
+	ENDIF
+	IF timer() = 0 THEN:
+		OUTPUT Noise()
+		IF Button_2() pressed THEN 
+		END Noise()
+	ENDIF
+ENDWHILE
+
+
+BEGIN Stack
+	WHEN button pressed
+	Add 5 mins to timer()
+END Stack
+
+BEGIN LED_Brightness()
+	IF timer() > timer()
+	Add 0.05 brightness
+
+### Flow Chart:
+https://excalidraw.com/#json=GSN6XUadniQtGOj8Z4L-2,SQSbc6Oab721o4Cz8i2ZSA
+### PMI
+Kevin Zhu
+- Plus: The circuitry functions properly, without any visible errors or misplaced wiring. In the end the program achieves its task(to dected heat at a harming rate and output an alarm) with the use of a heat sensors, buttons, an led and a buzzer
+- Minus: The demo was a little bit too long, in the middle where nothing happend. 
+- Implication: A way to improve for future tasks is to add efficient code but overall
+
+Alfonso Delgado
+- Plus: Nice clean code - sets up all the variables and needed pins in a clear and orderly way. Has clear comments, explaining how each line of code functions. Works as intended. Smart use of space - using two circut boards.
+- Minus: wires can maybe be organised. Smart use of space - using two circut boards
+- Implication: A way you can improve this is to make the buttons more distinct, such as maybe colour the end button red.
+
+### Evaluation:
+
+Evaluate your Final Test in Relation to Functional Criteria
+
+Evaluate your Final Test in Relation to Non-Functional Criteria
+
+Evaluate your Final Performance in Relation to the Identified Need
+
+Evaluate your Project in Relation to Project Management
+I believe I managed my time well throughout this assessment task, despite needing to complete major parts of the development and integration unit into the testing and debugging stage, this is because i was away on  Ski trip for all of week 4. For the first 3 weeks, I stuck to the plan given to us and completed the project documentation thoroughly. And for the last 2 weeks, my buddy and I have conversed with each other to make sure the final product is as it was intended to be.
+Evaluate your Project in Relation to Peer Feedback.
+
+Justify Future Improvements you could make to your Final Product
